@@ -1,0 +1,120 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<!-- Copyright (C) 2026 Only Refresh contributors. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <title>Only Refresh</title>
+</head>
+<body>
+  <header class="hdr">
+    <span class="logo" aria-hidden="true">&#10227;</span>
+    <h1>Only Refresh</h1>
+    <button type="button" id="gearBtn" class="gear" aria-label="Settings">&#9881;</button>
+  </header>
+
+  <!-- Language settings (toggled by the gear) -->
+  <section class="card lang-card hidden" id="langPanel">
+    <div class="ctl-row">
+      <label for="langSelect" data-i18n="language">Language</label>
+      <select id="langSelect" class="inline-select"></select>
+    </div>
+  </section>
+
+  <main>
+    <!-- Interval -->
+    <section class="card">
+      <div class="card-title" data-i18n="interval">Interval</div>
+      <div class="presets" id="presets" role="group" aria-label="Interval presets">
+        <button type="button" data-ms="10000">10s</button>
+        <button type="button" data-ms="30000">30s</button>
+        <button type="button" data-ms="60000">1m</button>
+        <button type="button" data-ms="300000">5m</button>
+        <button type="button" data-ms="1800000">30m</button>
+      </div>
+      <div class="field-row" id="customRow">
+        <span class="field-label" data-i18n="custom">Custom</span>
+        <input type="number" id="customValue" min="1" step="1" inputmode="numeric">
+        <select id="customUnit">
+          <option value="seconds" data-i18n="unitSeconds">seconds</option>
+          <option value="minutes" data-i18n="unitMinutes">minutes</option>
+          <option value="hours" data-i18n="unitHours">hours</option>
+        </select>
+      </div>
+      <div class="ctl-row">
+        <label for="randomMode" data-i18n="randomInterval">Random interval</label>
+        <input type="checkbox" id="randomMode" class="switch">
+      </div>
+      <div class="field-row random-fields hidden" id="randomFields">
+        <span class="field-label" data-i18n="from">from</span>
+        <input type="number" id="fromValue" min="1" step="1" inputmode="numeric">
+        <select id="fromUnit">
+          <option value="seconds" data-i18n="unitSec">sec</option>
+          <option value="minutes" data-i18n="unitMin">min</option>
+          <option value="hours" data-i18n="unitHr">hr</option>
+        </select>
+        <span class="field-label" data-i18n="to">to</span>
+        <input type="number" id="toValue" min="1" step="1" inputmode="numeric">
+        <select id="toUnit">
+          <option value="seconds" data-i18n="unitSec">sec</option>
+          <option value="minutes" data-i18n="unitMin">min</option>
+          <option value="hours" data-i18n="unitHr">hr</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Refresh options -->
+    <section class="card">
+      <div class="card-title" data-i18n="options">Options</div>
+      <div class="ctl-row">
+        <label for="hardRefresh"><span data-i18n="hardRefresh">Hard refresh</span> <small data-i18n="bypassCache">bypass cache</small></label>
+        <input type="checkbox" id="hardRefresh" class="switch">
+      </div>
+      <div class="ctl-row">
+        <label for="maxReloads"><span data-i18n="maxReloads">Max reloads</span> <small data-i18n="unlimitedHint">0 = unlimited</small></label>
+        <input type="number" id="maxReloads" min="0" step="1" inputmode="numeric" class="num-inline">
+      </div>
+      <div class="ctl-row">
+        <label for="background" data-i18n="background">Background refresh</label>
+        <input type="checkbox" id="background" class="switch">
+      </div>
+      <div class="hint" data-i18n="backgroundHint">Off: pauses on tab switch and continues when you come back.</div>
+    </section>
+
+    <!-- On-page -->
+    <section class="card">
+      <div class="card-title" data-i18n="onPage">On page</div>
+      <div class="ctl-row">
+        <label for="autoScroll" data-i18n="autoScroll">Auto-Scroll</label>
+        <input type="checkbox" id="autoScroll" class="switch">
+      </div>
+      <div class="pick-area hidden" id="pickArea">
+        <div class="target-line" id="targetLine">
+          <span id="targetHint" class="target-hint"></span>
+        </div>
+        <div class="btn-row">
+          <button type="button" id="pickBtn" class="mini-btn">Pick a spot on the page</button>
+          <button type="button" id="clearTargetBtn" class="mini-btn ghost-btn hidden" data-i18n="clear">Clear</button>
+        </div>
+      </div>
+      <div class="ctl-row">
+        <label for="overlay" data-i18n="countdownOverlay">Countdown overlay</label>
+        <input type="checkbox" id="overlay" class="switch">
+      </div>
+    </section>
+
+    <div class="actions">
+      <button type="button" id="startBtn" class="primary" data-i18n="start">Start</button>
+      <button type="button" id="stopBtn" class="ghost" data-i18n="stop">Stop</button>
+    </div>
+
+    <div class="status" id="status">Stopped</div>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
