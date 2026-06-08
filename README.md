@@ -8,6 +8,12 @@ locally — no accounts, no network calls, no tracking.
 
 ---
 
+<img width="436" height="600" alt="image" src="https://github.com/user-attachments/assets/cb3deecf-4887-4b2a-8b8e-aac4d230fad6" />
+
+<img width="437" height="602" alt="image" src="https://github.com/user-attachments/assets/64150516-bd05-493c-93de-f4e2f09ad187" />
+
+---
+
 ## Features
 
 - **Preset intervals** — 10s, 30s, 1m, 5m, 30m (single-select).
@@ -41,7 +47,8 @@ locally — no accounts, no network calls, no tracking.
   position is remembered for that tab and restored on every reload); hit **×** to
   hide it.
 - **Survives reloads, resets on close** — everything (session, picked scroll
-  target, overlay position) belongs to the **tab**: it survives reloads of that
+  target, overlay position) belongs to the **tab**: it survives reloads of that![Uploading image.png…]()
+
   tab, but closing the tab and reopening the site gives you a clean slate. The
   session keeps running on the tab you started on even while you work in others.
 - **Multi-language UI** — the popup and the picker are localized into **English,
@@ -306,6 +313,8 @@ source is public to read, modify, and share for any noncommercial purpose, but
 commercial use is not permitted. The full text is in [LICENSE](LICENSE); the
 canonical version is at
 <https://polyformproject.org/licenses/noncommercial/1.0.0>.
+
+Required Notice: Copyright 2026 Bulma1337
 
 In short:
 
