@@ -1,18 +1,12 @@
 # Only Refresh
 
-A free, open-source **Manifest V3** browser extension for Chromium and Brave
-that auto-reloads the current tab at a configurable interval, with a clean
-on-page countdown ring, a live countdown on the toolbar icon, and optional
-auto-scroll (including an element picker). Everything runs locally — no
-accounts, no network calls, no tracking.
+A **source-available** Manifest V3 browser extension for Chromium and Brave, free
+for noncommercial use, that auto-reloads the current tab at a configurable
+interval, with a clean on-page countdown ring, a live countdown on the toolbar
+icon, and optional auto-scroll (including an element picker). Everything runs
+locally — no accounts, no network calls, no tracking.
 
 ---
-
-<img width="436" height="600" alt="image" src="https://github.com/user-attachments/assets/71aa49ff-84ed-49dc-a9c1-8b81e88df133" />
-
-<img width="437" height="602" alt="image" src="https://github.com/user-attachments/assets/f63e9d48-8113-411e-822a-ae1d2e11d6e8" />
-
-
 
 ## Features
 
@@ -286,7 +280,7 @@ only_refresh/
 │   ├── build_i18n.js        # Builds src/i18n.js from tools/i18n/*.json
 │   └── i18n/                # Per-language source strings (en, de, fr, es, zh, ja, ko, ru)
 ├── README.md
-├── LICENSE                  # GPL-3.0-only
+├── LICENSE                  # PolyForm Noncommercial 1.0.0
 └── .gitignore
 ```
 
@@ -306,6 +300,22 @@ python tools/generate_icons.py
 
 ## License
 
-Licensed under the **GNU General Public License v3.0 only**
-(`SPDX-License-Identifier: GPL-3.0-only`). See [LICENSE](LICENSE) for the full
-text. Every source file carries an SPDX header.
+**Only Refresh** is **source-available** software licensed under the
+**PolyForm Noncommercial License 1.0.0** — free for noncommercial use only. The
+source is public to read, modify, and share for any noncommercial purpose, but
+commercial use is not permitted. The full text is in [LICENSE](LICENSE); the
+canonical version is at
+<https://polyformproject.org/licenses/noncommercial/1.0.0>.
+
+In short:
+
+- **Free for noncommercial use** — personal, hobby, educational, research, and
+  nonprofit use are all permitted. You may read, run, modify, and share the source
+  for any noncommercial purpose.
+- **Commercial use is not permitted** under this license.
+- The software is provided **without warranty and without liability**, to the
+  extent allowed by law.
+
+Every source file carries an
+`SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0` header (`manifest.json` has
+none, since JSON has no comment syntax).
